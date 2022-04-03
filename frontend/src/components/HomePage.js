@@ -3,9 +3,9 @@ import CreatPostPage from './CreatPostPage';
 import LegendsPage from './LegendsPage';
 import {
   BrowserRouter as Router,
-  Routes,
   Route,
   Link,
+  Switch,
   Redirect,
 } from "react-router-dom";
 
@@ -17,13 +17,15 @@ export default class HomePage extends Component {
 
   render(){
     return (
-      <Router>
-        <Routes>
-          <Route path="/" element = {<HomePage/>} />
-          <Route path="/create" element={<CreatPostPage/>} />
-          <Route path="/legends" element={<LegendsPage/>} />
-        </Routes>
-    </Router>
+        <Router>
+            <Switch>
+              <Route exact path="/">
+                <p>Пошёл нахуй</p>
+              </Route>
+              <Route path="/create" component = {CreatPostPage} />
+              <Route path="/legends" component = {LegendsPage} />
+            </Switch>
+        </Router>
   );
   }
 }
