@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { render } from 'react-dom';
 import CreatPostPage from './CreatPostPage';
 import LegendsPage from './LegendsPage';
 import {
@@ -13,10 +14,13 @@ import {
 export default class HomePage extends Component {
   constructor(props){
     super(props);
+
   }
+
 
   render(){
     return (
+      <div>
         <Router>
             <Switch>
               <Route exact path="/">
@@ -26,6 +30,7 @@ export default class HomePage extends Component {
               <Route path="/legends" component = {LegendsPage} />
             </Switch>
         </Router>
+      </div>
   );
   }
 }
