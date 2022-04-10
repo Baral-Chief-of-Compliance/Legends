@@ -1,5 +1,4 @@
-import React, { Component} from 'react';
-
+import React, { Component } from 'react';
 
 
 export default class LegendsPage extends Component {
@@ -44,7 +43,7 @@ export default class LegendsPage extends Component {
             {this.state.data.map(Legend_IVT => {
               return(
                 <li key={Legend_IVT.id}>
-                  {Legend_IVT.name} {Legend_IVT.surname}-<img src = { Legend_IVT.photo }/>
+                  {Legend_IVT.name} {Legend_IVT.surname} <img src = { Legend_IVT.photo }/>
                 </li>
               );
             })}

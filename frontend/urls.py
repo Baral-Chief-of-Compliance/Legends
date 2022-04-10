@@ -5,4 +5,5 @@ urlpatterns = [
     path('', index),
     path('create', index),
     path('legends', index),
+    path('posts', index),
 ]

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { render } from 'react-dom';
 import CreatPostPage from './CreatPostPage';
 import LegendsPage from './LegendsPage';
+import PostPage from './PostPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -28,6 +29,7 @@ export default class HomePage extends Component {
               </Route>
               <Route path="/create" component = {CreatPostPage} />
               <Route path="/legends" component = {LegendsPage} />
+              <Route path="/posts" component = {PostPage} />
             </Switch>
         </Router>
       </div>
