@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 export default class PostPage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data: []
+      posts: []
     };
   }
 
 
-  componentPhoto(){
-    fetch("api/Post/")
-      .then(response => {
-        return response.json();
+  componentDidMount(){
+    axios.get('api/Post')
+      .then(res => {
+        const posts = res.data;
+        this.setState({ posts });
       })
-      .then(data => {
-        this.setState(() => {
-          return {
-            data
-          };
-        });
-      });
   }
 
   render(){
@@ -31,13 +26,7 @@ export default class PostPage extends Component {
           Посты
         </div>
         <div>
-          {this.state.data.map(Photo=>{
-            return(
-              <div key={ Photo.id }>
-                 { Photo.name } <img src = { Photo.img }/>
-              </div>
-            );
-          })}
+          {this.state.posts.map(post => <div>{ post.name } <img src = { post.img }/></div>)}
         </div>
       </div>
     )
