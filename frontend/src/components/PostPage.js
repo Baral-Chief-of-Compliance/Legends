@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -13,8 +14,8 @@ export default class PostPage extends Component {
 
   componentDidMount(){
     axios.get('api/Post')
-      .then(res => {
-        const posts = res.data;
+      .then(response => {
+        const posts = response.data;
         this.setState({ posts });
       })
   }
@@ -26,7 +27,7 @@ export default class PostPage extends Component {
           Посты
         </div>
         <div>
-          {this.state.posts.map(post => <div>{ post.name } <img src = { post.img }/></div>)}
+          {this.state.posts.map(post => <div key = { post.id }> <NavLink to = {'/posts/'+post.id}>{ post.name }</NavLink> <img src = { post.img }/></div>)}
         </div>
       </div>
     )

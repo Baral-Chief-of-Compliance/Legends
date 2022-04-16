@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import CreatPostPage from './CreatPostPage';
 import LegendsPage from './LegendsPage';
 import PostPage from './PostPage';
+import OnePostPage from './OnePostPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -29,7 +30,8 @@ export default class HomePage extends Component {
               </Route>
               <Route path="/create" component = {CreatPostPage} />
               <Route path="/legends" component = {LegendsPage} />
-              <Route path="/posts" component = {PostPage} />
+              <Route exact path="/posts" component = {PostPage} />
+              <Route path="/posts/:id" component = {OnePostPage}/>
             </Switch>
         </Router>
       </div>

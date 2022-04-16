@@ -6,4 +6,5 @@ urlpatterns = [
     path('create', index),
     path('legends', index),
     path('posts', index),
+    path('posts/<int:id>', index),
 ]
